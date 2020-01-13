@@ -1,0 +1,13 @@
+#endpoint: http://localhost:4466#endpoint: https://eu1.prisma.sh/anton-karlovskiy/apollo-server-prisma-starter/dev
+endpoint: https://eu1.prisma.sh/anton-karlovskiy/apollo-server-prisma-starter/dev
+
+datamodel: datamodel.prisma
+
+generate:
+  - generator: javascript-client
+    output: ./src/generated/prisma-client/
+
+hooks:
+  post-deploy:
+    - prisma generate
+
